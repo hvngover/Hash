@@ -16,9 +16,9 @@ class MyHashTable<K, V> {
             throw new IllegalArgumentException("Capacity must be a positive value");
         }
         this.size = 0;
-        this.buckets = new ArrayList<>(capacity);
+        this.buckets = new ArrayList<>(capacity);// Create a new ArrayList with specified capacity
         for (int i = 0; i < capacity; i++) {
-            buckets.add(new LinkedList<>());
+            buckets.add(new LinkedList<>()); // Initialize each bucket with an empty linked list
         }
     }
 }
