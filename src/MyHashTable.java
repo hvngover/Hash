@@ -4,8 +4,8 @@ import java.util.List;
 
 
 class MyHashTable<K, V> {
-    private List<LinkedList<Entry<K, V>>> buckets;
-    private int size;
+    private List<LinkedList<Entry<K, V>>> buckets; // List of linked lists to store entries
+    private int size; // Number of elements in the hash table
 
     public MyHashTable() {
         this(50);
