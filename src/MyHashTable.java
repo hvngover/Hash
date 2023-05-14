@@ -90,5 +90,15 @@ class MyHashTable<K, V> {
             int bucketIndex = hashCode % buckets.size(); // Compute the bucket index using the hashCode
             return Math.abs(bucketIndex); // Ensure a positive bucket index
         }
+
+        private static class Entry<K, V> {
+            private K key;
+            private V value;
+
+            public Entry(K key, V value) {
+                this.key = key;
+                this.value = value;
+            }
+        }
     }
 }
