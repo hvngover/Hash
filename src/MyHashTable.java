@@ -46,5 +46,16 @@ class MyHashTable<K, V> {
         bucket.add(new Entry<>(key, value)); // Add a new entry to the bucket
         size++;
 
+        public V get(K key) {
+            int bucketIndex = getBucketIndex(key);
+            LinkedList<Entry<K, V>> bucket = buckets.get(bucketIndex);
+            for (Entry<K, V> entry : bucket) {
+                if (entry.key.equals(key)) {
+                    return entry.value;
+                }
+            }
+            return null;
+        }
+
 
 }
