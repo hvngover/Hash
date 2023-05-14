@@ -21,4 +21,13 @@ class MyHashTable<K, V> {
             buckets.add(new LinkedList<>()); // Initialize each bucket with an empty linked list
         }
     }
+    public int getSize() {
+        return size;
+    }
+
+    public int getCapacity() {
+        return buckets.size();
+    }
+
+
 }
