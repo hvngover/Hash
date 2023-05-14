@@ -21,6 +21,7 @@ class MyHashTable<K, V> {
             buckets.add(new LinkedList<>()); // Initialize each bucket with an empty linked list
         }
     }
+
     public int getSize() {
         return size; // Return the number of elements in the hash table
     }
@@ -46,7 +47,7 @@ class MyHashTable<K, V> {
         bucket.add(new Entry<>(key, value)); // Add a new entry to the bucket
         size++;
 
-        public V get(K key) {
+        public V get (K key){
             int bucketIndex = getBucketIndex(key);
             LinkedList<Entry<K, V>> bucket = buckets.get(bucketIndex);
             for (Entry<K, V> entry : bucket) {
@@ -57,7 +58,7 @@ class MyHashTable<K, V> {
             return null; // Key not found
         }
 
-        public V remove(K key) {
+        public V remove (K key){
             int bucketIndex = getBucketIndex(key);
             LinkedList<Entry<K, V>> bucket = buckets.get(bucketIndex);
             for (Entry<K, V> entry : bucket) {
@@ -70,7 +71,7 @@ class MyHashTable<K, V> {
             return null; // Key not found
         }
 
-        public int getBucketSize(int index) {
+        public int getBucketSize ( int index){
             if (index < 0 || index >= buckets.size()) {
                 throw new IllegalArgumentException("Invalid bucket index");
             }
@@ -78,12 +79,18 @@ class MyHashTable<K, V> {
             return bucket.size(); // Return the size of the specified bucket
         }
 
-        public void clear() {
+        public void clear () {
             for (LinkedList<Entry<K, V>> bucket : buckets) {
                 bucket.clear(); // Clear all the buckets
             }
             size = 0; // Reset the size to zero
         }
+        private int getBucketIndex (K key){
+            int hashCode = key.hashCode();
+            int bucketIndex = hashCode % buckets.size();
+            return Math.abs(bucketIndex);
+        }
 
 
+    }
 }
