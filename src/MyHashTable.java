@@ -29,5 +29,10 @@ class MyHashTable<K, V> {
         return buckets.size(); // Return the capacity of the hash table
     }
 
+    public void put(K key, V value) {
+        if (key == null) {
+            throw new IllegalArgumentException("Key cannot be null");
+        }
+
 
 }
