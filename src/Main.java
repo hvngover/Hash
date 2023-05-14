@@ -1,5 +1,8 @@
+import java.util.Random;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-    }
+        // Create new hash table with MyTestingClass keys and Student values
+        MyHashTable<MyTests, Student> table = new MyHashTable<>();
+
+
 }
