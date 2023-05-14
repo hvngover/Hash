@@ -13,5 +13,10 @@ class Student {
         this.age = age;
     }
 
+    // Override toString() method to provide a string representation of Student
+    @Override
+    public String toString() {
+        return "Student [name=" + name + ", age=" + age + "]";
+    }
 }
 
