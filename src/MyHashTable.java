@@ -57,5 +57,18 @@ class MyHashTable<K, V> {
             return null; // Key not found
         }
 
+        public V remove(K key) {
+            int bucketIndex = getBucketIndex(key);
+            LinkedList<Entry<K, V>> bucket = buckets.get(bucketIndex);
+            for (Entry<K, V> entry : bucket) {
+                if (entry.key.equals(key)) {
+                    bucket.remove(entry);
+                    size--;
+                    return entry.value;
+                }
+            }
+            return null;
+        }
+
 
 }
