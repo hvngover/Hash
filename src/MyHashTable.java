@@ -8,7 +8,7 @@ class MyHashTable<K, V> {
     private int size; // Number of elements in the hash table
 
     public MyHashTable() {
-        this(50);
+        this(35); // Default capacity is 35
     }
 
     public MyHashTable(int capacity) {
