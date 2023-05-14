@@ -22,11 +22,11 @@ class MyHashTable<K, V> {
         }
     }
     public int getSize() {
-        return size;
+        return size; // Return the number of elements in the hash table
     }
 
     public int getCapacity() {
-        return buckets.size();
+        return buckets.size(); // Return the capacity of the hash table
     }
 
 
