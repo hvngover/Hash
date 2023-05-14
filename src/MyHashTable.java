@@ -8,7 +8,7 @@ class MyHashTable<K, V> {
     private int size;
 
     public MyHashTable() {
-        this(25);
+        this(50);
     }
 
     public MyHashTable(int capacity) {
