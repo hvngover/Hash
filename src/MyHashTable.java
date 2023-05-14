@@ -85,7 +85,7 @@ class MyHashTable<K, V> {
             }
             size = 0; // Reset the size to zero
         }
-        private int getBucketIndex(K key) {
+        private int getBucketIndex (K key){
             int hashCode = key.hashCode();
             int bucketIndex = hashCode % buckets.size(); // Compute the bucket index using the hashCode
             return Math.abs(bucketIndex); // Ensure a positive bucket index
