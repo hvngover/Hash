@@ -62,12 +62,12 @@ class MyHashTable<K, V> {
             LinkedList<Entry<K, V>> bucket = buckets.get(bucketIndex);
             for (Entry<K, V> entry : bucket) {
                 if (entry.key.equals(key)) {
-                    bucket.remove(entry);
+                    bucket.remove(entry); // Remove the entry from the bucket
                     size--;
-                    return entry.value;
+                    return entry.value; // Return the value of the removed entry
                 }
             }
-            return null;
+            return null; // Key not found
         }
 
 
