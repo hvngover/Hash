@@ -5,4 +5,5 @@ public class Main {
         MyHashTable<MyTests, Student> table = new MyHashTable<>();
 
 
+    }
 }
