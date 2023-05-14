@@ -34,5 +34,17 @@ class MyHashTable<K, V> {
             throw new IllegalArgumentException("Key cannot be null");
         }
 
+        int bucketIndex = getBucketIndex(key);
+        LinkedList<Entry<K, V>> bucket = buckets.get(bucketIndex);
+        for (Entry<K, V> entry : bucket) {
+            if (entry.key.equals(key)) {
+                entry.value = value; // If key already exists, update the value
+                return;
+            }
+        }
+
+        bucket.add(new Entry<>(key, value)); // Add a new entry to the bucket
+        size++;
+
 
 }
