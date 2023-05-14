@@ -75,14 +75,14 @@ class MyHashTable<K, V> {
                 throw new IllegalArgumentException("Invalid bucket index");
             }
             LinkedList<Entry<K, V>> bucket = buckets.get(index);
-            return bucket.size();
+            return bucket.size(); // Return the size of the specified bucket
         }
 
         public void clear() {
             for (LinkedList<Entry<K, V>> bucket : buckets) {
-                bucket.clear();
+                bucket.clear(); // Clear all the buckets
             }
-            size = 0;
+            size = 0; // Reset the size to zero
         }
 
 
