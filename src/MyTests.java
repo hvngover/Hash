@@ -15,4 +15,15 @@ class MyTests {
         return result; // Return the final hash code
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true; // If the objects are the same, they are equal
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false; // If the object is null or belongs to a different class, they are not equal
+        }
+        MyTests other = (MyTests) obj; // Cast the object to MyTests type
+        return id == other.id && (name != null ? name.equals(other.name) : other.name == null); // Compare the id and name for equality
+    }
 }
