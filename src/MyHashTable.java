@@ -70,5 +70,20 @@ class MyHashTable<K, V> {
             return null; // Key not found
         }
 
+        public int getBucketSize(int index) {
+            if (index < 0 || index >= buckets.size()) {
+                throw new IllegalArgumentException("Invalid bucket index");
+            }
+            LinkedList<Entry<K, V>> bucket = buckets.get(index);
+            return bucket.size();
+        }
+
+        public void clear() {
+            for (LinkedList<Entry<K, V>> bucket : buckets) {
+                bucket.clear();
+            }
+            size = 0;
+        }
+
 
 }
